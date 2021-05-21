@@ -1,0 +1,37 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Players</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/players/create/" class="btn btn-success btn-sm">Create New</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm" style="text-align:center">
+    <tr>
+      
+      <th>FirstName</th>
+      <th>SecondName</th>
+      <th>Age</th>
+      <th>Nathionality</th>
+      <th>ChampionShips</th>      
+      <th width="200px"></th>
+    </tr>
+    <tr *ngFor="let player of players"> 
+      
+      <td>{{ player.firstName}}</td>
+      <td>{{ player.secondName }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.nathionality.countryName}}</td>
+      <td>{{ player.shamionShips }}</td>
+     
+      <td class="text-right">
+        <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-info btn-sm">View</a>
+        <a href="#" [routerLink]="['/players/', player.id, 'edit']" class="btn btn-primary btn-sm">Edit</a>
+       
+      </td>
+    </tr>
+  </table>
+</div>

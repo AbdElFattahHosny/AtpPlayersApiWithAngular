@@ -1,0 +1,26 @@
+<div class="container">
+  <br />
+  <h3>Player Details</h3>
+  <br />
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <h4>{{ player.firstName }}  {{ player.secondName }} </h4>
+        </div>
+        <div class="col text-right">
+          <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+          <button type="button" (click)="deletePlayer(player.id)" class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Id:</b> {{ player.id }}</li>
+      <li class="list-group-item"><b> First Name :</b> {{ player.firstName }}</li>
+      <li class="list-group-item"><b>Second Name:</b> {{ player.secondName }}</li>
+      <li class="list-group-item"><b>Age:</b> {{ player.age }}</li>
+      <li class="list-group-item"><b>Nationality:</b> {{ player.nathionality.countryName }}</li>
+      <li class="list-group-item"><b>Championships :</b> {{ player.shamionShips}}</li>
+    </ul>
+  </div>
+</div>

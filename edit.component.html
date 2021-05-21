@@ -1,0 +1,65 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Update Player</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+    </div>
+  </div>
+  <br />
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+
+    <!--<label for="id"> ID : </label>
+    <input formControlName="id"
+           id="id"
+           type="text"
+           readonly class="form-control" placeholder="{{ player.id }}"/>-->
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName"
+             id="firstName"
+             type="text"
+             class="form-control" placeholder="{{ player.firstName }}" />
+    </div>
+
+    <div class="form-group">
+      <label for="secondName">Second Name:</label>
+      <input formControlName="secondName"
+             id="secondName"
+             type="text"
+             class="form-control" placeholder="{{ player.secondName }}" />
+    </div>
+
+    <div class="form-group">
+      <label for="nathionalityId">Nationality :</label>
+      <select formControlName="nathionalityId"
+              id="nathionalityId"
+              class="form-control">
+        <option value="">- Select -</option>
+        <option *ngFor="let country  of countries" [ngValue]="country.id">
+          {{country.countryName}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age :</label>
+      <input formControlName="age"
+             id="age"
+             type="text"
+             class="form-control" placeholder="{{ player.age }}" />
+    </div>
+    <div class="form-group">
+      <label for="shamionShips">ChampionShips:</label>
+      <input formControlName="shamionShips"
+             id="shamionShips"
+             type="text"
+             class="form-control" placeholder="{{ player.shamionShips}}" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Update</button>
+  </form>
+</div>
