@@ -27,4 +27,13 @@ export class DetailsComponent implements OnInit {
       this.player = data;
     });
   }
+
+  deletePlayerByID(id) {
+    if (confirm("Are you sure you want to delete this ?")) {
+      this.playersService.deletePlayerByID(id).subscribe(res => {
+        this.router.navigateByUrl('players/list');
+      });
+    }
+  }
 }
+  
